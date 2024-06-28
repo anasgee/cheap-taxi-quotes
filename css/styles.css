@@ -15,6 +15,12 @@
     --table-paragraph:#FFB812;
 }
 
+body{
+    margin: 0px!important;
+    padding: 0px !important;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
 .form-control::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -42,7 +48,9 @@ textarea::placeholder{
     color: rgb(255, 255, 255);  
 }
 
-
+#bookNow{
+    font-size: 12px;
+}
 
 /* Input for checkbox old code */
 
@@ -95,6 +103,31 @@ textarea::placeholder{
             border: 1px solid var(--deals_button_bg)!important;
         }
 
+        input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+            color: white;
+            filter: invert(1);
+            cursor: pointer;
+           
+        }
+
+        .track_booking{
+            margin-top: -7rem;
+        }   
+        .terms ol {
+    
+            counter-reset:item;
+          }
+         .terms li{
+            display: inline-block;
+            font-size: 14px!important;
+            line-height: 20px;
+            margin-top: 20px;
+            
+          }
+        .terms li:before {
+            content: counters(item, ".") " ";
+            counter-increment: item;
+          }
 /* Deals input */
 .checkbox input[type="checkbox"]{
     background: var(--input_color)!important;
@@ -172,6 +205,11 @@ textarea::placeholder{
     display: inline-block;
 }
 
+#getQuotes:hover{
+   color: black;
+
+}
+
 #flightNumber{
     display: none;
 }
@@ -226,7 +264,7 @@ input {
 }
 
 
-.right_div_top {
+.right_div {
     text-align: center;
 
 }
@@ -237,6 +275,7 @@ textarea{
     background: var(--right_div_color);
     color: white;
     text-align: center;
+    /* width: 100%; */
 
 
 }
@@ -248,6 +287,12 @@ a{
 }
 .btn{
     background: var(--button_color);
+}
+.btn:hover{
+    background: var(--deals_button_bg);
+}
+.price_button a:hover{
+    color: black;
 }
 .heading{
     font-size: 4rem;
@@ -287,7 +332,7 @@ h1{
 }
 
 span{
-    color: var(--button_color);
+    color: var(--table-paragraph);
 }
 
 /* Customer Reviews */
@@ -299,8 +344,8 @@ span{
 }
 
 .reviews-container{
-    margin-top: -100px;
-    margin-bottom:200px;
+    margin-top: -150px;
+    margin-bottom:30px;
 }
 .dp{
     width: 5rem;
@@ -318,10 +363,25 @@ span{
 }
 
 
+.container h1{
+    font-size: 2rem!important;
+  }
 
 
+  .details{
+    margin-top: -10px;
+}
 
-
+.card{
+    position: relative;
+}
+.discount{
+    position: absolute;
+    background: red;
+    /* height: 23px; */
+    border-radius: 10px;
+    font-size: 14px;
+}
 
 
 
@@ -359,7 +419,16 @@ span{
 
 
 /* Footer */
-
+.right_low_footer .copyright-text{
+    font-size: 14px;
+    margin-top: 1rem;
+    color: var(--input_color)!important;
+}
+.paragraph{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
 
 /* Footer parent */
 .parent{
@@ -395,11 +464,17 @@ span{
     /* height: auto; */
     
 }
-.footer-links{
-    text-overflow: ellipsis;
-    overflow: hidden;
+.footer-links a{
+    text-overflow: ellipsis!important;
+    overflow: hidden!important;
+    text-decoration: underline;
 }
-
+.footer-links li{
+    margin-top: 15px!important;
+}
+.footer-links a:hover{
+    color: blue;
+}
 .right_low_footer{
     display: flex;
     justify-content: center;
@@ -433,9 +508,51 @@ span{
     white-space: nowrap;
     overflow: hidden;
 }
+
+
+#payment_btn{
+    width: 58%!important;
+}
+#update_btn:hover{
+   color: black;
+}
+
+
+#privacyTerms ol li{
+    font-size: 15px;
+    
+}
+#privacyTerms p{
+    font-size: 15px;
+  
+}
+
+.terms ol {
+    
+    counter-reset:item;
+  }
+ .terms li{
+    display: inline-block;
+    font-size: 14px!important;
+    line-height: 20px;
+    margin-top: 20px;
+    
+  }
+.terms li:before {
+    content: counters(item, ".") " ";
+    counter-increment: item;
+  }
+#privacyTerms .terms-heading{
+    font-size: 20px!important;
+    color: var(--button_color);
+  }
 /* Sign in or sign up links */
 
-
+.close{
+    font-size: 2rem;
+    margin-right: 1px;
+    color: black!important;
+}
 
 
 
@@ -459,18 +576,87 @@ span{
     }
     
 }
-@media screen and (max-width:768px)
 
-{
-    .right_low_footer{
-    display: none;
-}
-    .footer_low{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+@media screen and (max-width:768px){
+    .account_pic{
+        width: 30px;
+        height: 30px;
+    }
+    .right_div h4{
+        font-size: 1.1rem!important;
+    }
+    #navbar .navbar-brand img{
+        width: 100px!important;
+    }
+    .right_div{
+        padding: 1rem!important;
+    }
+    .right_div p{
+        font-size:13px;
+    }
+    .email_input p{
+        margin-top: 20px!important;
+        font-size: 12px;
+    }
+    .modal_heading{
+        width: 75%!important;
+    }
+    #payment_btn{
+        width: 100%!important;
+    }
+    .childCta h4{
+        font-size: 1rem!important;
+    }
+    .childCta button{
+        width: 50% !important;
+    }
+    .container h1{
+        font-size: 1.2rem!important;
+        width: 100%!important;
+        padding: 0!important;
+    }
+    #getQuotes{
+        width: 75%!important;
+
     }
 
-
-}
-
+        .w-75{
+            width: 100%!important;
+        }
+        .privacyTerms .container-fluid .row{
+            width: 100%!important;
+        }
+        #privacyTerms{
+            padding: 10px 0px!important;
+        }
+        #privacyTerms ol li{
+            font-size: 13px;
+        }
+        #privacyTerms p{
+            font-size: 13px;
+          
+        }
+        #privacyTermsRow{
+            width: 100%!important;
+        }
+        .border-left li{
+            margin-right: 15px!important;
+        }
+        .right_low_footer{
+            display: none;
+        }
+        .left_low_footer{
+            margin-left: -30px;
+        }
+        .footer_low{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+    
+        #getQotes_select .form-select{
+        font-size: 10px;
+    }
+    }
